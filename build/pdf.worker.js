@@ -32318,12 +32318,12 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
       var encoding = properties.defaultEncoding;
 
       for (var charCode = 0; charCode < 256; charCode++) {
-        if (charCode in differences && widthsByGlyphName[differences[charCode]]) {
+        if (charCode in differences && typeof widthsByGlyphName[differences[charCode]] === 'number') {
           widths[charCode] = widthsByGlyphName[differences[charCode]];
           continue;
         }
 
-        if (charCode in encoding && widthsByGlyphName[encoding[charCode]]) {
+        if (charCode in encoding && typeof widthsByGlyphName[encoding[charCode]] === 'number') {
           widths[charCode] = widthsByGlyphName[encoding[charCode]];
           continue;
         }
