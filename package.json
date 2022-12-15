@@ -29,5 +29,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mozilla/pdfjs-dist"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.17.4"
+  },
+  "scripts": {
+    "minify": "uglifyjs build/pdf.worker.js -o build/pdf.worker.min.js --compress --mangle"
   }
 }
